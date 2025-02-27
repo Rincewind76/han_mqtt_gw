@@ -59,8 +59,23 @@ The username and password is usually provided by the provider of the grid (Netzb
 
 The MQTT host has to be edited as well just below.
 
+## Home Assistant
+A sample configuration for Home Assistant is in the file [smartmeter.yaml](smartmeter.yaml)
+
+Make sure you adapt the smartmeter ID to the same value as in the python script.
+
 ## Execution
 The script is a single run, reading out the data and providing it via MQTT - including a feedback on the screen:
 ```
 python smartmeter.py
 ```
+It is easier, if the script gets called via crontab:
+```
+sudo crontab -e
+```
+then add a line and replace the username "tuxuser" with your real one
+```
+*/15 * * * * python /home/tuxuser/han_mqtt_gw/smartmeter.py > /dev/null
+```
+This lines triggers an execution of the script every 15 minutes. (which is the update rate of my smart meters)
+The addition of /dev/null to the command just removes all feedback to the screen (screen output is written to NULL device)
