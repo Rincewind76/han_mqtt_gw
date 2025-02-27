@@ -1,0 +1,16 @@
+mqtt:
+  sensor:
+    - name: smartmeter_wp_energy_consumed
+      unique_id: uniqueid__smartmeter_wp_energy_consumed
+      icon: mdi:flash
+      state_topic: "homeassistant/sensor/1EFR123456789/1-0:1.8.0_value"
+      value_template: "{{ value | round(0) }}"
+      unit_of_measurement: "kWh"
+      state_class: measurement
+      device_class: energy
+      expire_after: 3600
+
+    - name: smartmeter_wp_energy_timestamp
+      unique_id: uniqueid__smartmeter_wp_energy_timestamp
+      icon: mdi:update
+      state_topic: "homeassistant/sensor/1EFR123456789/1-0:1.8.0_timestamp"
