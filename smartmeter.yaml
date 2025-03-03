@@ -24,3 +24,13 @@ mqtt:
          identifiers: "1EFR123456789"
          manufacturer: "PPC"
          model: "PPC Smartmeter"
+
+    - name: smartmeter_wp_energy_serial_number
+      unique_id: uniqueid__smartmeter_wp_energy_serial_number
+      icon: mdi:identifier
+      state_topic: "homeassistant/sensor/1EFR123456789/serial_number"
+      device: 
+         name: "PPC Smartmeter Wärmepumpe"
+         identifiers: "1EFR123456789"
+         manufacturer: "PPC"
+         model: "PPC Smartmeter"
