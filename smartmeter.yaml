@@ -9,8 +9,18 @@ mqtt:
       state_class: measurement
       device_class: energy
       expire_after: 3600
-
+      device: 
+         name: "PPC Smartmeter Wärmepumpe"
+         identifiers: "1EFR123456789"
+         manufacturer: "PPC"
+         model: "PPC Smartmeter"
+         
     - name: smartmeter_wp_energy_timestamp
       unique_id: uniqueid__smartmeter_wp_energy_timestamp
       icon: mdi:update
       state_topic: "homeassistant/sensor/1EFR123456789/1-0:1.8.0_timestamp"
+      device: 
+         name: "PPC Smartmeter Wärmepumpe"
+         identifiers: "1EFR123456789"
+         manufacturer: "PPC"
+         model: "PPC Smartmeter"
