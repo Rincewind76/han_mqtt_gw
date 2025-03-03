@@ -84,6 +84,10 @@ for row in rows:
             {
             'topic': f"homeassistant/sensor/{smartmeter_id}/{result_data['obis']}_name",
             'payload': result_data['name'], 'qos':1, 'retain': False
+            },
+            {
+            'topic': f"homeassistant/sensor/{smartmeter_id}/serial_number",
+            'payload': smartmeter_id, 'qos':1, 'retain': False
             }
     ]
     results.append(result_data)
